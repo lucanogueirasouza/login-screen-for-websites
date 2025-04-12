@@ -8,7 +8,7 @@ email = ""
 while True:
     try:
         escolha = int(input(
-            "PAINEL\n[1] - Criar conta\n[2] - Entrar na conta\n[3] - Sair (Voltar depois)\n[4] - Sair\nEscolha: "
+            "PAINEL\n[1] - Criar conta\n[2] - Entrar na conta\n[3] - Sair (Salvar dados)\n[4] - Sair (Sem salvar dados)\nEscolha: "
         ))
         os.system("Cls")
 

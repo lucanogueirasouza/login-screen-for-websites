@@ -74,4 +74,5 @@ while True:
             print("Escolha uma opção válida.")
 
     except ValueError:
+        os.system('Cls')
         print("Escolha sua opção em forma numérica.")

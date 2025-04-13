@@ -31,9 +31,13 @@ while True:
                         os.system('Cls')
                         continue
                 except IndexError:
+                    os.system('Cls')
                     print (
-                        "Digite algo."
+                        "Você não digitou nada. Tente novamente."
                     )
+                    sleep(1)
+                    os.system('Cls')
+                    continue
 
                 if "@gmail.com" not in email_conta_criada:
                     os.system('Cls')

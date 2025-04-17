@@ -63,7 +63,9 @@ while True:
                 os.system('Cls')
                 break 
                 
-            print("Conta Criada com Sucesso!")
+            print(
+                "Conta Criada com Sucesso!"
+                )
 
         elif escolha == 2:
             if email == "" or senha == "":

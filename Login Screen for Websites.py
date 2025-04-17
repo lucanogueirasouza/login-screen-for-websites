@@ -1,6 +1,9 @@
 import os 
 from time import sleep
 
+def limpar_tela(): 
+    os.system("Cls")
+
 print("---TELA LOGIN SITE QUALQUER---")
 
 senha = ""
@@ -30,14 +33,11 @@ while True:
                         sleep(1)
                         os.system('Cls')
                         continue
+    
                 except IndexError:
-                    os.system('Cls')
                     print (
-                        "Você não digitou nada. Tente novamente."
+                        "Digite algo."
                     )
-                    sleep(1)
-                    os.system('Cls')
-                    continue
 
                 if "@gmail.com" not in email_conta_criada:
                     os.system('Cls')
@@ -55,17 +55,28 @@ while True:
                     "Digite uma senha: "
                     )
                 if len(senha_conta_criada) <= 4:
+                    os.system('Cls')
                     print(
                         "Sua senha deve ter mais de 4 caracteres. Tente Novamente."
                         )
+                    sleep(1)
+                    os.system('Cls')
                     continue
+
+                if "@" not in senha_conta_criada and "#" not in senha_conta_criada:
+                    os.system('Cls') 
+                    print (
+                        "Sua senha deve ter um caractere especial como '@ ou #'. Tente novamente."
+                    )
+                    sleep(1)
+                    os.system('Cls')
+                    continue
+
                 senha += senha_conta_criada
                 os.system('Cls')
                 break 
                 
-            print(
-                "Conta Criada com Sucesso!"
-                )
+            print("Conta Criada com Sucesso!")
 
         elif escolha == 2:
             if email == "" or senha == "":

@@ -1,22 +1,32 @@
 import os 
 from time import sleep
 
+def limpar_tela(*args): 
+    os.system("Cls")
+
 print("---TELA LOGIN SITE QUALQUER---")
 
 senha = ""
 email = ""
-
-def limpar_tela(): 
-    os.system("Cls")
 
 while True:
     try:
         escolha = int(input(
             "PAINEL\n[1] - Criar conta\n[2] - Entrar na conta\n[3] - Sair (Salvar dados)\n[4] - Sair (Sem salva dados)\nEscolha: "
         ))
-        limpar_tela()
+        os.system("Cls")
 
         if escolha == 1:
+
+            if email is not "" or senha is not "":
+                os.system('Cls')
+                print(
+                    "Você possui dados cadastrados. Entre em sua conta."
+                )
+                sleep(1)
+                os.system('Cls')
+                continue
+            
             while True:
                 print (
                     "Criando conta..."
@@ -26,12 +36,12 @@ while True:
                     ).strip().lower()
                 try: 
                     if email_conta_criada[0] is "@" or "": 
-                        limpar_tela()
+                        os.system('Cls')
                         print (
                             "Seu email não existe, tente um email válido."
                         )
                         sleep(1)
-                        limpar_tela()
+                        os.system('Cls')
                         continue
     
                 except IndexError:
@@ -40,12 +50,12 @@ while True:
                     )
 
                 if "@gmail.com" not in email_conta_criada:
-                    limpar_tela()
+                    os.system('Cls')
                     print(
                         "Seu email está faltando '@gmail.com'. Tente Novamente."
                         )
                     sleep(1)
-                    limpar_tela()
+                    os.system('Cls')
                     continue
                 email += email_conta_criada
                 break
@@ -55,37 +65,37 @@ while True:
                     "Digite uma senha: "
                     )
                 if len(senha_conta_criada) <= 4:
-                    limpar_tela()
+                    os.system('Cls')
                     print(
-                        "Sua senha deve ter mais de 4 caracteres. Tente Novamente."
+                     "Sua senha deve ter mais de 4 caracteres. Tente Novamente."
                         )
-                    sleep(1)
-                    limpar_tela()
+                    sleep(4)
+                    os.system('Cls')
                     continue
 
                 if "@" not in senha_conta_criada and "#" not in senha_conta_criada:
-                    limpar_tela()
+                    os.system('Cls') 
                     print (
                         "Sua senha deve ter um caractere especial como '@ ou #'. Tente novamente."
                     )
                     sleep(1)
-                    limpar_tela()
+                    os.system('Cls')
                     continue
 
                 senha += senha_conta_criada
-                limpar_tela()
+                os.system('Cls')
                 break 
                 
             print("Conta Criada com Sucesso!")
 
         elif escolha == 2:
             if email == "" or senha == "":
-                limpar_tela()
+                os.system('Cls')
                 print(
                     "Você não possui dados cadastrados. Crie uma conta."
                     )
                 sleep(1)
-                limpar_tela()
+                os.system('Cls')
                 continue
 
             print (
@@ -99,14 +109,14 @@ while True:
                 )
 
             if email_login == email and senha_login == senha:
-                limpar_tela()
+                os.system('Cls')
                 print("Logado(a) com sucesso!")
             else:
-                limpar_tela()
+                os.system('Cls')
                 print("Email ou senha incorretos.")
 
         elif escolha == 3:
-            limpar_tela()
+            os.system('Cls')
             while True:
                 print (
                     "Fora do site..."
@@ -115,22 +125,22 @@ while True:
                         "Deseja entrar no site novamente? [s/n]: "
                         ).strip().lower()
                 if escolha_voltar_site == "s":
-                        limpar_tela()
+                        os.system('Cls')
                         break
                 elif escolha_voltar_site == "n":
-                    limpar_tela()
+                    os.system('Cls')
                     print(
                         "Você escolheu sair. Encerrando..."
                         )
                     sleep(2)
-                    limpar_tela()
+                    os.system('Cls')
                 else:
-                    limpar_tela()
+                    os.system('Cls')
                     print(
                         "Opção inválida. Voltando ao menu principal."
                     )  
                     sleep(1)
-                    limpar_tela()
+                    os.system('Cls')
                     break
 
         elif escolha == 4:
@@ -138,13 +148,13 @@ while True:
             break
 
         else:
-            limpar_tela()
+            os.system('Cls')
             print("Escolha uma opção válida.")
             sleep(1)
-            limpar_tela()
+            os.system('Cls')
 
     except ValueError: 
-        limpar_tela()
+        os.system('Cls')  
         print("Escolha sua opção em forma numérica.")
         sleep(1)
-        limpar_tela()
+        os.system('Cls')

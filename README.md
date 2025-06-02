@@ -1,4 +1,4 @@
-# 🛡Sistema de Login em Python | Python Login System
+#Sistema de Login em Python | Python Login System
 
 Este é um sistema de login simples criado em Python, que permite ao usuário:
 
